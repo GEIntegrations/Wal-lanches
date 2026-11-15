@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111111">
+    <link rel="stylesheet" href="style.css">
+    <title>WAL LANCHES | Desde 1997</title>
+</head>
+
+<body>
+    <header class="top">
+        <div class="wrap nav">
+            <a class="brand" href="#"><img
+                    src=""alt="Logo WAL LANCHES">
+                <div>WAL <span>LANCHES</span><small
+                        style="display:block;color:#999;font-size:9px;letter-spacing:2px">DESDE 1997</small></div>
+            </a>
+            <nav class="navlinks"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#sobre">Sobre
+                    nós</a><a href="#localizacao">Localização</a></nav>
+            <a class="btn" href="#cardapio">Fazer pedido</a>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="inicio">
+            <div class="wrap hero-grid">
+                <div>
+                    <div class="eyebrow">Desde 1997 • Sabor de verdade</div>
+                    <h1>Seu lanche.<br><em>Seu momento.</em></h1>
+                    <p>Hambúrgueres, porções, cachorro-quente, açaí e muito mais. Escolha seus favoritos e faça seu
+                        pedido direto pelo WhatsApp!</p>
+                    <div class="hero-actions"><a class="btn" href="#cardapio">🍔 Ver cardápio</a><a class="btn outline"
+                            href="#localizacao">Como chegar</a></div>
+                    <div class="stats">
+                        <div class="stat"><strong>1997</strong><small>Desde então</small></div>
+                        <div class="stat"><strong>18h às 00h</strong><small>Horário informado online*</small></div>
+                        <div class="stat"><strong>Delivery</strong><small>Peça sem sair de casa</small></div>
+                    </div>
+                </div>
+                <div class="hero-art"><img src="" alt="WAL LANCHES"></div>
+            </div>
+        </section>
+        <section class="section" id="cardapio">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">Feito pra matar sua fome</div>
+                        <h2>Nosso cardápio</h2>
+                        <p>Escolha os itens e monte seu pedido.</p>
+                    </div><input id="search" class="search" placeholder="Buscar no cardápio...">
+                </div>
+                <div class="categories" id="categories"></div>
+                <div class="grid" id="products"></div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <div class="promo">
+                    <div>
+                        <div class="eyebrow">Bateu aquela fome?</div>
+                        <h3>Seu próximo lanche está aqui.</h3>
+                        <p>Adicione seus favoritos ao carrinho e finalize pelo WhatsApp.</p>
+                    </div><a class="btn" href="#cardapio">Montar meu pedido →</a>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="sobre">
+            <div class="wrap">
+                <div class="eyebrow">WAL LANCHES</div>
+                <h2>Tradição que dá gosto.</h2>
+                <div class="about-grid">
+                    <div class="info-card">
+                        <h3>🍔 Desde 1997</h3>
+                        <p>Uma lanchonete para compartilhar bons momentos e matar a fome com aquele lanche caprichado.
+                            Confira as opções do nosso cardápio e peça agora.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🛵 Entrega e retirada</h3>
+                        <p>Atendemos com entrega e retirada. Consulte a disponibilidade, taxa de entrega e prazo
+                            diretamente pelo WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="localizacao">
+            <div class="wrap">
+                <div class="eyebrow">Venha nos encontrar</div>
+                <h2>Estamos em Águas Claras</h2>
+                <div class="about-grid">
+                    <div class="info-card">
+                        <h3>📍 WAL LANCHES</h3>
+                        <p>QS 10, nº 94 — Areal (Águas Claras)<br>Brasília — DF, CEP 71978-000</p>
+                        <p style="margin-top:14px">📞 (61) 98636-0369<br>⏰ Consulte o horário antes de sair.</p><a
+                            class="btn" style="margin-top:18px" target="_blank"
+                            href="https://www.google.com/maps/search/?api=1&query=QS+10+94+Areal+Brasilia+DF">Abrir rota
+                            no Maps</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>Encontre a gente no mapa</h3><iframe class="map" loading="lazy"
+                            src="https://www.google.com/maps?q=QS%2010%2C%2094%2C%20Areal%2C%20Bras%C3%ADlia%20DF&output=embed"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="wrap footer-inner"><span>© <span id="year"></span> WAL LANCHES • Desde 1997</span><span>Feito com 🍔
+                em Brasília - DF</span></div>
+    </footer>
+    <button class="btn cart-float" onclick="openCart()">🛒 Meu pedido <span class="cart-count"
+            id="count">0</span></button>
+    <div class="modal-bg" id="modal" onclick="if(event.target===this)closeCart()">
+        <div class="cart">
+            <div class="cart-head">
+                <h2>Seu pedido</h2><button class="close" onclick="closeCart()">✕</button>
+            </div>
+            <div id="cartItems"></div>
+            <div class="total"><span>Total parcial</span><span id="total">R$ 0,00</span></div>
+            <label>Seu nome</label><input class="field" id="customer" placeholder="Como podemos te chamar?">
+            <label>Entrega ou retirada</label><select class="field" id="delivery">
+                <option>Entrega</option>
+                <option>Retirada no local</option>
+            </select>
+            <label>Endereço (se for entrega)</label><input class="field" id="address"
+                placeholder="Rua, número, bairro e complemento">
+            <label>Observações</label><input class="field" id="notes" placeholder="Ex.: sem cebola, ponto da carne...">
+            <button class="btn" style="width:100%" onclick="sendOrder()">Enviar pedido pelo WhatsApp</button>
+            <p style="color:#888;font-size:11px;text-align:center">O pedido será enviado para confirmação pelo WhatsApp.
+                Taxa de entrega não incluída.</p>
+        </div>
+    </div>
+    <script>
+        const catalog = [{"category": "Barca", "name": "BARCA DE HAMBÚRGUERES", "description": "Acompanhamentos: 2 hambúrgueres Anéis de cebola, calabresa ou batata extra, 2 refrigerantes em lata (Opcionais).", "price": 58.9, "priceLabel": "A partir de R$ 58,90"}, {"category": "Macarrão - Balcão", "name": "MACARRÃO", "description": "", "price": 25.9, "priceLabel": "A partir de R$ 25,90"}, {"category": "Porções", "name": "BATATA FRITA PEQUENA", "description": "", "price": 14.0, "priceLabel": "R$ 14,00"}, {"category": "Porções", "name": "BATATA FRITA MÉDIA", "description": "", "price": 16.0, "priceLabel": "R$ 16,00"}, {"category": "Porções", "name": "BATATA FRITA COM CHEDDAR E BACON", "description": "", "price": 24.9, "priceLabel": "R$ 24,90"}, {"category": "Porções", "name": "Porção Anéis de Cebola (6und)", "description": "", "price": 14.0, "priceLabel": "R$ 14,00"}, {"category": "Cachorro quente", "name": "HOT DOG AO MOLHO", "description": "Pão, salsicha, mussarela, milho e batata palha.", "price": 13.0, "priceLabel": "R$ 13,00"}, {"category": "Cachorro quente", "name": "HOT DOG AO MOLHO COM CATUPIRY", "description": "Pão, salsicha, mussarela, milho, batata palha e catupiry", "price": 13.5, "priceLabel": "R$ 13,50"}, {"category": "Cachorro quente", "name": "HOT DOG DE CALABRESA", "description": "Pão, calabresa, mussarela, presunto, milho, batata palha e bacon", "price": 13.5, "priceLabel": "R$ 13,50"}, {"category": "Cachorro quente", "name": "HOT DOG DE CALABRESA COM SALSICHA", "description": "Pão, calabresa, mussarela, presunto, milho, batata palha, bacon e salsicha.", "price": 14.5, "priceLabel": "R$ 14,50"}, {"category": "Cachorro quente", "name": "HOT DOG DE FRANGO", "description": "Pão, frango desfiado, mussarela, milho e batata palha.", "price": 14.5, "priceLabel": "R$ 14,50"}, {"category": "Cachorro quente", "name": "HOT DOG DE FRANGO COM CATUPIRY", "description": "Pão, frango desfiado , mussarela, milho, batata palha e catupiry.", "price": 15.0, "priceLabel": "R$ 15,00"}, {"category": "Cachorro quente", "name": "HOT DOG NA CHAPA", "description": "Pão, salsicha, mussarela, presunto, milho, batata palha e bacon.", "price": 13.0, "priceLabel": "R$ 13,00"}, {"category": "Cachorro quente", "name": "HOT DOG NA CHAPA COM CATUPIRY", "description": "Pão, salsicha, mussarela, presunto, milho, batata palha, bacon e catupiry.", "price": 14.0, "priceLabel": "R$ 14,00"}, {"category": "Cachorro quente", "name": "HOT DOG NA CHAPA COM OVO", "description": "Pão, salsicha, mussarela, presunto, milho, batata palha,bacon e ovo", "price": 14.5, "priceLabel": "R$ 14,50"}, {"category": "Cachorro quente", "name": "HOT DOG NA CHAPA COM OVO E CATUPIRY", "description": "Pão, salsicha, mussarela, presunto, milho, batata palha, bacon, ovo e catupiry.", "price": 15.5, "priceLabel": "R$ 15,50"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG AO MOLHO", "description": "Pão, salsicha, mussarela, milho e batata palha. Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 23.5, "priceLabel": "R$ 23,50"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG AO MOLHO COM CATUPIRY", "description": "Pão, salsicha, mussarela, milho, batata palha e catupiry. Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 23.5, "priceLabel": "R$ 23,50"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG DE CALABRESA", "description": "Pão, calabresa, mussarela, presunto, milho, batata palha e bacon.Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 23.0, "priceLabel": "R$ 23,00"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG DE CALABRESA COM SALSICHA", "description": "Pão, calabresa, mussarela, presunto, milho, batata palha, bacon e salsicha.Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 24.5, "priceLabel": "R$ 24,50"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG DE FRANGO", "description": "Pão, frango desfiado, mussarela, milho e batata palha. Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 23.5, "priceLabel": "R$ 23,50"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG DE FRANGO COM CATUPIRY", "description": "Pão, frango desfiado , mussarela, milho, batata palha e catupiry. Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 24.5, "priceLabel": "R$ 24,50"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG NA CHAPA", "description": "Pão, salsicha, mussarela, presunto, milho, batata palha e bacon.Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 22.5, "priceLabel": "R$ 22,50"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG NA CHAPA COM CATUPIRY", "description": "Pão, salsicha, mussarela, presunto, milho, batata palha, bacon e catupiry.Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 23.5, "priceLabel": "R$ 23,50"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG NA CHAPA COM OVO", "description": "Pão, salsicha, mussarela, presunto, milho, batata palha,bacon e ovo. Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 24.0, "priceLabel": "R$ 24,00"}, {"category": "Cachorro quente", "name": "TRIO HOT DOG NA CHAPA COM OVO E CATUPIRY", "description": "Pão, salsicha, mussarela, presunto, milho, batata palha, bacon, ovo e catupiry. Acompanhamentos: Batata frita e Coca Cola 300ml.", "price": 25.0, "priceLabel": "R$ 25,00"}, {"category": "Hambúrguer de Carne", "name": "TRIO X BACON", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata, calabresa e bacon. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 26.5, "priceLabel": "R$ 26,50"}, {"category": "Hambúrguer de Carne", "name": "TRIO X BOMBA", "description": "Pão, alface, tomate, 2 hambúrgueres, mussarela, presunto, milho, batata , calabresa, 2 ovos, bacon, salsicha e catupiry. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 29.5, "priceLabel": "R$ 29,50"}, {"category": "Hambúrguer de Carne", "name": "TRIO X EGG", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa e ovo Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 26.0, "priceLabel": "R$ 26,00"}, {"category": "Hambúrguer de Carne", "name": "TRIO X SALADA", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata e calabresa. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 25.0, "priceLabel": "R$ 25,00"}, {"category": "Hambúrguer de Carne", "name": "TRIO X TUDO", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo e bacon. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 26.5, "priceLabel": "R$ 26,50"}, {"category": "Hambúrguer de Carne", "name": "TRIO X TUDO COM CATUPIRY", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo, bacon e catupiry. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 27.0, "priceLabel": "R$ 27,00"}, {"category": "Hambúrguer de Carne", "name": "TRIO X TUDO COM CHEDDAR", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo, bacon e cheddar Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 28.5, "priceLabel": "R$ 28,50"}, {"category": "Hambúrguer de Carne", "name": "TRIO X TUDO COM SALSICHA", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo, bacon e salsicha. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 27.0, "priceLabel": "R$ 27,00"}, {"category": "Hambúrguer de Carne", "name": "TRIO X TUDO ESPECIAL", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo, bacon, salsicha e catupiry. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 28.5, "priceLabel": "R$ 28,50"}, {"category": "Hambúrguer de Carne", "name": "X BACON", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata, calabresa e bacon", "price": 16.0, "priceLabel": "R$ 16,00"}, {"category": "Hambúrguer de Carne", "name": "X BOMBA", "description": "Pão, alface, tomate, 2 hambúrgueres, mussarela, presunto, milho, batata , calabresa, 2 ovos, bacon, salsicha e catupiry.", "price": 20.0, "priceLabel": "R$ 20,00"}, {"category": "Hambúrguer de Carne", "name": "X EGG", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa e ovo", "price": 16.0, "priceLabel": "R$ 16,00"}, {"category": "Hambúrguer de Carne", "name": "X SALADA", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata e calabresa.", "price": 15.5, "priceLabel": "R$ 15,50"}, {"category": "Hambúrguer de Carne", "name": "X TUDO", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo e bacon.", "price": 16.5, "priceLabel": "R$ 16,50"}, {"category": "Hambúrguer de Carne", "name": "X TUDO COM CATUPIRY", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo, bacon e catupiry", "price": 17.0, "priceLabel": "R$ 17,00"}, {"category": "Hambúrguer de Carne", "name": "X TUDO COM CHEDDAR", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo, bacon e cheddar", "price": 17.5, "priceLabel": "R$ 17,50"}, {"category": "Hambúrguer de Carne", "name": "X TUDO COM SALSICHA", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo, bacon e salsicha.", "price": 17.0, "priceLabel": "R$ 17,00"}, {"category": "Hambúrguer de Carne", "name": "X TUDO ESPECIAL", "description": "Pão, alface, tomate, hambúrguer, mussarela, presunto, milho, batata , calabresa, ovo, bacon, salsicha e catupiry.", "price": 18.0, "priceLabel": "R$ 18,00"}, {"category": "Hambúrguer de Frango", "name": "TRIO X BACON (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata, calabresa e bacon. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 27.5, "priceLabel": "R$ 27,50"}, {"category": "Hambúrguer de Frango", "name": "TRIO X BOMBA (FRANGO)", "description": "Pão, alface, tomate, 2 peito de frango, mussarela, presunto, milho, batata , calabresa, 2 ovos, bacon, salsicha e catupiry. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 30.5, "priceLabel": "R$ 30,50"}, {"category": "Hambúrguer de Frango", "name": "TRIO X EGG (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa e ovo.Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 27.0, "priceLabel": "R$ 27,00"}, {"category": "Hambúrguer de Frango", "name": "TRIO X SALADA (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata e calabresa. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 26.0, "priceLabel": "R$ 26,00"}, {"category": "Hambúrguer de Frango", "name": "TRIO X TUDO (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo e bacon.Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 27.5, "priceLabel": "R$ 27,50"}, {"category": "Hambúrguer de Frango", "name": "TRIO X TUDO COM CATUPIRY (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo, bacon e catupiry. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 27.5, "priceLabel": "R$ 27,50"}, {"category": "Hambúrguer de Frango", "name": "TRIO X TUDO COM CHEDDAR (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo, bacon e cheddar.Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 30.0, "priceLabel": "R$ 30,00"}, {"category": "Hambúrguer de Frango", "name": "TRIO X TUDO COM SALSICHA (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo, bacon e salsicha.Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 28.5, "priceLabel": "R$ 28,50"}, {"category": "Hambúrguer de Frango", "name": "TRIO X TUDO ESPECIAL (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo, bacon, salscicha e catupiry. Acompanhamentos: Batata frita e Coca Cola de 300ml.", "price": 30.0, "priceLabel": "R$ 30,00"}, {"category": "Hambúrguer de Frango", "name": "X BACON (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata, calabresa e bacon.", "price": 17.0, "priceLabel": "R$ 17,00"}, {"category": "Hambúrguer de Frango", "name": "X BOMBA (FRANGO)", "description": "Pão, alface, tomate, 2 peito de frango, mussarela, presunto, milho, batata , calabresa, 2 ovos, bacon, salsicha e catupiry", "price": 21.0, "priceLabel": "R$ 21,00"}, {"category": "Hambúrguer de Frango", "name": "X EGG (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa e ovo.", "price": 17.0, "priceLabel": "R$ 17,00"}, {"category": "Hambúrguer de Frango", "name": "X SALADA (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata e calabresa", "price": 16.5, "priceLabel": "R$ 16,50"}, {"category": "Hambúrguer de Frango", "name": "X TUDO (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo e bacon.", "price": 17.5, "priceLabel": "R$ 17,50"}, {"category": "Hambúrguer de Frango", "name": "X TUDO COM CATUPIRY (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo, bacon e catupiry", "price": 18.0, "priceLabel": "R$ 18,00"}, {"category": "Hambúrguer de Frango", "name": "X TUDO COM CHEDDAR (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo, bacon e cheddar.", "price": 18.5, "priceLabel": "R$ 18,50"}, {"category": "Hambúrguer de Frango", "name": "X TUDO COM SALSICHA (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo, bacon e salsicha.", "price": 18.0, "priceLabel": "R$ 18,00"}, {"category": "Hambúrguer de Frango", "name": "X TUDO ESPECIAL (FRANGO)", "description": "Pão, alface, tomate, peito de frango, mussarela, presunto, milho, batata , calabresa, ovo, bacon, salscicha e catupiry", "price": 19.0, "priceLabel": "R$ 19,00"}, {"category": "Hambúguer artesanal", "name": "CEBOLA CARAMELIZADA", "description": "Pão artesanal, carne 130g, cheddar, bacon, cebola caramelizada ao molho shoyo e maionese de bacon. * Acompanha batata frita", "price": 28.9, "priceLabel": "R$ 28,90"}, {"category": "Hambúguer artesanal", "name": "CREAM CHEESE", "description": "Pão artesanal, carne 130g, cream cheese, mussarela, bacon e maionese de bacon. * Acompanha batata frita", "price": 29.4, "priceLabel": "R$ 29,40"}, {"category": "Hambúguer artesanal", "name": "DUPLO", "description": "Pão artesanal, 2 carnes de 130g, cheddar, dobro de bacon, ovo, cebola roxa e maionese de bacon. Acompanha batata frita", "price": 32.4, "priceLabel": "R$ 32,40"}, {"category": "Hambúguer artesanal", "name": "SIMPLES", "description": "Pão artesanal, carne 130g, mussarela, cebola roxa, tomate, alface e maionese de bacon.", "price": 19.9, "priceLabel": "R$ 19,90"}, {"category": "Wal kids", "name": "Misto-quente c/ovo", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Wal kids", "name": "Misto-quente", "description": "", "price": 7.5, "priceLabel": "R$ 7,50"}, {"category": "Wal kids", "name": "Trio wal kids", "description": "Pão, carne, queijo, ovo e salada. Aconhamentos: Batata frita, Coca Cola 300ml.", "price": 21.4, "priceLabel": "R$ 21,40"}, {"category": "Açaí - Balcão", "name": "BARCA DE AÇAÍ -", "description": "", "price": 29.5, "priceLabel": "R$ 29,50"}, {"category": "Açaí - Balcão", "name": "Açai 500ml", "description": "", "price": 20.5, "priceLabel": "R$ 20,50"}, {"category": "Açaí - Balcão", "name": "Açaí 300ml", "description": "Acompanha leite condensado, granola e banana", "price": 19.0, "priceLabel": "A partir de R$ 19,00"}, {"category": "Milk Shake", "name": "Milk-Shake Morango", "description": "", "price": 16.0, "priceLabel": "R$ 16,00"}, {"category": "Milk Shake", "name": "Milk-Shake Chocolate", "description": "", "price": 16.5, "priceLabel": "R$ 16,50"}, {"category": "Milk Shake", "name": "Milk-Shake Ninho", "description": "", "price": 16.0, "priceLabel": "R$ 16,00"}, {"category": "Milk Shake", "name": "Milk-Shake Ovomaltine", "description": "", "price": 16.0, "priceLabel": "R$ 16,00"}, {"category": "Sucos", "name": "Suco de Abacaxi", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Cupuaçu", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Abacaxi c/ Hortelã", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Acerola", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Cajá", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Goiaba", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Graviola", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Laranja 300ml", "description": "", "price": 10.0, "priceLabel": "R$ 10,00"}, {"category": "Sucos", "name": "Suco de Laranja 400ml", "description": "", "price": 11.0, "priceLabel": "R$ 11,00"}, {"category": "Sucos", "name": "Suco de Laranja 500ml", "description": "", "price": 13.0, "priceLabel": "R$ 13,00"}, {"category": "Sucos", "name": "Suco de Manga", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Maracujá", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Morango", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Sucos", "name": "Suco de Uva", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Cremes", "name": "Creme de Uva", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Cremes", "name": "Creme de Cajá", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes", "name": "Creme de Coco", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes", "name": "Creme de Manga", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes", "name": "Creme de Goiaba", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes", "name": "Creme de Cupuaçu", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes", "name": "CREME MARACUJÁ 500", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes", "name": "Creme de Abacaxi", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes", "name": "Creme de Açaí c/ Banana", "description": "", "price": 11.5, "priceLabel": "R$ 11,50"}, {"category": "Cremes", "name": "Creme de Maracujá", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes", "name": "Creme de Morango", "description": "", "price": 8.5, "priceLabel": "R$ 8,50"}, {"category": "Cremes", "name": "Creme de Graviola", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Bebidas", "name": "Coca-Cola Mini", "description": "250ml", "price": 4.5, "priceLabel": "R$ 4,50"}, {"category": "Bebidas", "name": "Guarana Antarctica lata", "description": "", "price": 6.5, "priceLabel": "R$ 6,50"}, {"category": "Bebidas", "name": "Coca-Cola 2 litros -", "description": "", "price": 15.0, "priceLabel": "R$ 15,00"}, {"category": "Bebidas", "name": "H2O LIMÃO FRESH", "description": "500ML", "price": 6.5, "priceLabel": "R$ 6,50"}, {"category": "Bebidas", "name": "H2O LIMÃO FRESH LIMONETO", "description": "", "price": 6.5, "priceLabel": "R$ 6,50"}, {"category": "Bebidas", "name": "Fanta Uva Lata", "description": "", "price": 6.5, "priceLabel": "R$ 6,50"}, {"category": "Bebidas", "name": "Água com gás", "description": "", "price": 4.0, "priceLabel": "R$ 4,00"}, {"category": "Bebidas", "name": "Coca-Cola 600ml", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Bebidas", "name": "Coca-Cola lata", "description": "", "price": 6.5, "priceLabel": "R$ 6,50"}, {"category": "Bebidas", "name": "Fanta laranja lata", "description": "", "price": 6.5, "priceLabel": "R$ 6,50"}, {"category": "Bebidas", "name": "Fanta laranja 500ml", "description": "", "price": 8.0, "priceLabel": "R$ 8,00"}, {"category": "Barca - Balcão", "name": "BARCA INDIVIDUAL -", "description": "X TUDO/ CALABRESA/ COCA lata", "price": 29.5, "priceLabel": "A partir de R$ 29,50"}, {"category": "Cremes - Balcão", "name": "Creme de Acerola", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}, {"category": "Cremes - Balcão", "name": "Creme de Maracujá", "description": "", "price": 9.0, "priceLabel": "R$ 9,00"}];
+        const phone = "5561986360369";
+        let cart = {};
+        let active = "Todos";
+        const categories = ["Todos", ...new Set(catalog.map(x => x.category))];
+        const money = n => n.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+        function renderCategories() {document.getElementById("categories").innerHTML = categories.map(c => `<button class="chip ${c === active ? 'active' : ''}" onclick="setCategory(${JSON.stringify(c)})">${c}</button>`).join("")}
+        function setCategory(c) {active = c; renderCategories(); renderProducts()}
+        function renderProducts() {
+            const q = document.getElementById("search").value.toLowerCase();
+            const list = catalog.filter(x => (active === "Todos" || x.category === active) && (x.name + " " + x.description + " " + x.category).toLowerCase().includes(q));
+            document.getElementById("products").innerHTML = list.map((x) => {const idx = catalog.indexOf(x); return `<article class="product"><div class="food-icon">🍔</div><h3>${x.name}</h3><p>${x.description || x.category}</p><div class="product-bottom"><span class="price">${x.priceLabel}</span><button class="add" aria-label="Adicionar ${x.name}" onclick="add(${idx})">+</button></div></article>`}).join("") || '<div class="empty">Nenhum item encontrado.</div>';
+        }
+        function add(i) {cart[i] = (cart[i] || 0) + 1; updateCart()}
+        function change(i, d) {cart[i] = (cart[i] || 0) + d; if (cart[i] <= 0) delete cart[i]; updateCart()}
+        function updateCart() {
+            let count = Object.values(cart).reduce((a, b) => a + b, 0), total = Object.entries(cart).reduce((s, [i, q]) => s + catalog[i].price * q, 0);
+            document.getElementById("count").textContent = count; document.getElementById("total").textContent = money(total);
+            const entries = Object.entries(cart);
+            document.getElementById("cartItems").innerHTML = entries.length ? entries.map(([i, q]) => `<div class="cart-row"><div><strong>${catalog[i].name}</strong><div style="color:#aaa;font-size:12px">${money(catalog[i].price)} cada</div></div><div class="qty"><button onclick="change(${i},-1)">−</button>${q}<button onclick="change(${i},1)">+</button></div></div>`).join("") : '<div class="empty">Seu carrinho está vazio. Adicione algo delicioso! 😋</div>';
+        }
+        function openCart() {document.getElementById("modal").classList.add("show"); updateCart()}
+        function closeCart() {document.getElementById("modal").classList.remove("show")}
+        function sendOrder() {
+            const entries = Object.entries(cart); if (!entries.length) {alert("Adicione pelo menos um item ao pedido."); return }
+            const name = document.getElementById("customer").value.trim(); if (!name) {alert("Informe seu nome."); document.getElementById("customer").focus(); return }
+            const mode = document.getElementById("delivery").value, address = document.getElementById("address").value.trim(), notes = document.getElementById("notes").value.trim();
+            let total = 0, lines = entries.map(([i, q]) => {let x = catalog[i]; total += x.price * q; return `• ${q}x ${x.name} — ${money(x.price * q)}`});
+            let msg = `Olá, WAL LANCHES! Quero fazer um pedido:\n\n${lines.join("\n")}\n\n*Total parcial: ${money(total)}*\n\nNome: ${name}\nTipo: ${mode}${mode === "Entrega" ? "\nEndereço: " + (address || "Vou informar") : ""}${notes ? "\nObservações: " + notes : ""}\n\nAguardo a confirmação.`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
+        }
+        document.getElementById("search").addEventListener("input", renderProducts);
+        document.getElementById("year").textContent = new Date().getFullYear();
+        renderCategories(); renderProducts(); updateCart();
+    </script>
+</body>
+
+</html>
